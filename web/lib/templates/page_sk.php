@@ -32,7 +32,7 @@
 				<a href="<?= $SITE['root_url'] ?>">pPHP</a>
 			</li>
 			<li>
-				<a href="<?= $SITE['root_url'] ?>/doc">Dokumentácia</a>
+				<a href="<?= $SITE['root_url'] ?>/forms">Formuláre</a>
 			</li>
 			<li>
 				<a href="<?= $SITE['root_url'] ?>/news">Novinky</a>
