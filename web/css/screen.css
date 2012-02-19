@@ -1,0 +1,97 @@
+body {
+	background: #fff;
+	/*font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+	/*font: 14px/22px Cantarell, 'Droid Sans', Ubuntu, 'DejaVu Sans', Arial, sans-serif;*/
+	font: normal medium Cantarell, 'Droid Sans', Ubuntu, 'DejaVu Sans', Arial, sans-serif;
+	line-height: 1.3;
+	color: #555;
+}
+
+.clear {clear: both;}
+
+h1#header {
+	font-size: 250%;
+	line-height: 1;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	color: #fc914f;
+	color: #555;
+}
+h1#header a {
+	text-decoration: none;
+	color: #fc914f;
+	color: #555;
+}
+h1#header img {
+	vertical-align: text-bottom;
+	border-style: none;
+}
+
+ul#menu {
+	position: relative;
+	margin: 0 auto; 
+	padding: 0;
+	font-family: Georgia, serif;
+	list-style: none; 
+	width: 100%; 
+	/*text-align: center;*/
+	margin: 0 0 25px 0;
+	border-top: 3px solid #ddd;
+	border-bottom: 3px solid #ddd;
+}
+ul#menu .current_page a { 
+	color: #999 !important; 
+}
+ul#menu li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+ul#menu a {
+	color: #333;
+	font-size: 150%; 
+	float: left;
+	padding: 6px 30px 4px 10px;
+	margin-top: 4px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+ul#menu a:hover {
+	color: #888;
+}
+
+p#langs {
+	font-size: small;
+	color: #666;
+	margin: 0 5px 3px 0;
+}
+
+p#footer {
+	margin: 40px 5px 0 0;
+}
+
+div#content p {
+	margin-right: 4%;
+}
+
+div#content h2 {
+	font-size: 200%;
+	line-height: 1;
+	margin-right: 4%;
+	color: #5b65a9;
+	color: #555;
+}
+div#content h3 {
+	font-size: 150%;
+	line-height: 1;
+	margin-right: 4%;
+	color: #5b65a9;
+	color: #555;
+}
+
+a {
+	color: #ff7f40;
+}
+a:visited {
+	color: #5b65a9;
+}

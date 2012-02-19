@@ -1,0 +1,20 @@
+#! /bin/bash
+
+
+cp -r web web_prod-tmp
+
+# replace config
+mv -vf web_prod-tmp/config-prod.inc.php web_prod-tmp/config.inc.php
+rm -rvf web_prod-tmp/config-*.inc.php
+
+# remove symbolik links
+cp -rL web_prod-tmp web_prod
+rm -rvf web_prod-tmp
+
+# copy to production by ftp
+#cd web_prod
+#lftp -c 'open -e "ls; mirror --reverse --delete --verbose ./ ./" -u username,password 277.63.217.56'
+#cd ..
+
+#rm -rvf web_prod
+
