@@ -9,7 +9,7 @@ $SITE['author'] = 'Peter Rybar';
 $SITE['author_mail'] = 'pr.rybar@gmail.com';
 $SITE['author_web'] = 'http://centaur.sk/~prybar';
 
-//$DATABASE = $ROOT_DIR . '/lib/db/data/db.sqlite'; // SQLite
+//$DATABASE = $ROOT_DIR . '/_lib/db/data/db.sqlite'; // SQLite
 //$DATABASE = array(
 //	'host_port' => 'localhost',
 //	'username' => 'root',
@@ -42,7 +42,7 @@ if ( $_SERVER["HTTP_HOST"] == 'localhost' ) {
 //-----------------------------------------------------------------------------
 // add include path
 
-$INCLUDE_PATH = $ROOT_DIR . '/lib';
+$INCLUDE_PATH = $ROOT_DIR . '/_lib';
 set_include_path(get_include_path() . PATH_SEPARATOR . $INCLUDE_PATH);
 
 

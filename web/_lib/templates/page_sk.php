@@ -19,23 +19,23 @@
 
 		<h1 id="header">
 			<a href="<?= $SITE['root_url'] ?>/">
-				pPHP - pico PHP framework
+				pPHP - pico PHP web framework
 			</a>
 		</h1>
 
 		<p id="langs" align="right">
-			<strong>en</strong> |
-			<a href="?lang=sk">sk</a>
+			<a href="?lang=">en</a> |
+			<strong>sk</strong>
 		</p>
 		<ul id="menu">
 			<li class="current_page_">
 				<a href="<?= $SITE['root_url'] ?>">pPHP</a>
 			</li>
 			<li>
-				<a href="<?= $SITE['root_url'] ?>/forms">Forms</a>
+				<a href="<?= $SITE['root_url'] ?>/forms">Formuláre</a>
 			</li>
 			<li>
-				<a href="<?= $SITE['root_url'] ?>/news">News</a>
+				<a href="<?= $SITE['root_url'] ?>/news">Novinky</a>
 			</li>
 		</ul>
 

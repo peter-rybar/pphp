@@ -1,7 +1,8 @@
 <?php
 require_once('template.class.php');
 
-class Application {
+class Application
+{
     var $lang;
     var $pageTemplate;
     var $headTemplate;

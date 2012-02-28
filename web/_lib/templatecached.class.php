@@ -4,8 +4,8 @@
  * An extension to Template that provides automatic caching of
  * template contents.
  */
-class TemplateCached extends Template {
-
+class TemplateCached extends Template
+{
     var $cache_id;
     var $expire;
     var $cached;

@@ -1,5 +1,5 @@
 <?php
 require_once('./config.inc.php');
 
-header('Location: ' . $ROOT_URL);
+header('Location: ' . $SITE['root_url']);
 ?>
