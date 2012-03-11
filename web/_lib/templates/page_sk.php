@@ -35,7 +35,7 @@
 				<a href="<?= $SITE['root_url'] ?>/forms">Formuláre</a>
 			</li>
 			<li>
-				<a href="<?= $SITE['root_url'] ?>/news">Novinky</a>
+				<a href="<?= $SITE['root_url'] ?>/subpage">Podstránka</a>
 			</li>
 		</ul>
 

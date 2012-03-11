@@ -9,6 +9,21 @@ class Form
 		$this->_is_valid = true;
 	}
 
+	function init($data)
+	{
+		foreach ($data as $name => $value) {
+			if (array_key_exists($name, $this->_validators)) {
+				if (is_array($value)) {
+					foreach ($value as $key => $item) {
+						$this->_validators[$name]->_validators[$key]->_value = $item;
+					}
+				} else {
+					$this->_validators[$name]->_value = $value;
+				}
+			}
+		}
+	}
+
 	function add_validator($name, $validator, $messages = null)
 	{
 		$this->_validators[$name] = $validator;
@@ -35,21 +50,6 @@ class Form
 		return $validity;
 	}
 
-	function init($data)
-	{
-		foreach ($data as $name => $value) {
-			if (array_key_exists($name, $this->_validators)) {
-				if (is_array($value)) {
-					foreach ($value as $key => $item) {
-						$this->_validators[$name]->_validators[$key]->_value = $item;
-					}
-				} else {
-					$this->_validators[$name]->_value = $value;
-				}
-			}
-		}
-	}
-
 	function value($name, $subname = null)
 	{
 		if (!array_key_exists($name, $this->_validators)) {
@@ -62,6 +62,15 @@ class Form
 		} else {
 			return $value;
 		}
+	}
+
+	function values()
+	{
+		$values = array();
+		foreach ($this->_validators as $name => $validator) {
+			$values[$name] = $validator->value();
+		}
+		return $values;
 	}
 
 	function error($name, $subname = null)
@@ -117,15 +126,6 @@ class Form
 		}
 		return $errors;
 	}
-
-	function values()
-	{
-		$values = array();
-		foreach ($this->_validators as $name => $validator) {
-			$values[$name] = $validator->value();
-		}
-		return $values;
-	}
 }
 
 
@@ -147,7 +147,7 @@ class TextValidator
 	{
 		return $this->_value;
 	}
-	
+
 	function error()
 	{
 		return $this->_error;
@@ -204,7 +204,7 @@ class NumberValidator
 	{
 		return $this->_value;
 	}
-	
+
 	function error()
 	{
 		return $this->_error;
@@ -268,7 +268,7 @@ class DateValidator
 	{
 		return $this->_value;
 	}
-	
+
 	function error()
 	{
 		return $this->_error;
@@ -319,7 +319,7 @@ class DateValidator
 			$ftime['tm_hour'],
 			$ftime['tm_min'],
 			$ftime['tm_sec'],
-			1 , 
+			1 ,
 			$ftime['tm_yday'] + 1,
 			$ftime['tm_year'] + 1900);
 		//echo strftime($this->_format, $timestamp) . "\n";
@@ -329,7 +329,7 @@ class DateValidator
 				$ftime_min['tm_hour'],
 				$ftime_min['tm_min'],
 				$ftime_min['tm_sec'],
-				1 , 
+				1 ,
 				$ftime_min['tm_yday'] + 1,
 				$ftime_min['tm_year'] + 1900);
 			//echo strftime($this->_format, $timestamp_min) . "\n";
@@ -344,7 +344,7 @@ class DateValidator
 				$ftime_max['tm_hour'],
 				$ftime_max['tm_min'],
 				$ftime_max['tm_sec'],
-				1 , 
+				1 ,
 				$ftime_max['tm_yday'] + 1,
 				$ftime_max['tm_year'] + 1900);
 			//echo strftime($this->_format, $timestamp_max) . "\n";
@@ -376,7 +376,7 @@ class SelectValidator
 	{
 		return $this->_value;
 	}
-	
+
 	function error()
 	{
 		return $this->_error;
@@ -418,7 +418,7 @@ class CheckboxValidator
 	{
 		return $this->_value;
 	}
-	
+
 	function error()
 	{
 		return $this->_error;
@@ -463,7 +463,7 @@ class ArrayValidator
 		}
 		return $value;
 	}
-	
+
 	function error()
 	{
 		return $this->_error;
@@ -508,7 +508,7 @@ class BirdthNumberValidator
 	{
 		return $this->_value;
 	}
-	
+
 	function error()
 	{
 		return $this->_error;
@@ -569,7 +569,7 @@ class BirdthNumberValidator
 		if ("8" === substr($date_string, 2, 1)) {
 			$date_string = substr($date_string, 0, 2) . "1" . substr($date_string, 3, 3);
 		}
-*/		
+*/
 /*
 		$ftime = strptime($date_string, '%y%m%d');
 		if ($ftime === false or !empty($ftime)) {

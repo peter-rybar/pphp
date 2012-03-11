@@ -35,7 +35,7 @@
 				<a href="<?= $SITE['root_url'] ?>/forms">Forms</a>
 			</li>
 			<li>
-				<a href="<?= $SITE['root_url'] ?>/news">News</a>
+				<a href="<?= $SITE['root_url'] ?>/subpage">Subpage</a>
 			</li>
 		</ul>
 

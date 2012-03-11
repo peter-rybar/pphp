@@ -12,15 +12,55 @@ $data = array();
 
 // form data validation
 $form = new Form();
-$form->add_validator('pohlavi', new SelectValidator(false, true, array('muz', 'zena')), array(
-	'empty value' => 'Vyberte pohlaví pojištěného.',
-	'not allowed value' => 'Vyberte pohlaví pojištěného.'));
-$form->add_validator('castka', new NumberValidator(false, true, 30000, 999000, true), array(
-	'empty value' => 'Zadejte částku jednorázového pojistného.',
-	'not numeric value' => 'Do pole mohou být zadány pouze číslice.',
-	'value too small' => 'Pojištění lze sjednat na minimální částku 30 000 Kč.',
-	'value too big' => 'Prostřednictvím internetu lze sjednat pojištění do maximální výše vkladu 999 000 Kč (včetně).',
-	'not integer numeric value' => 'Zadejte celočíselný udaj.'));
+
+
+// TextValidator
+$form->add_validator('text', new TextValidator(false, true, 1, 10 /*, '/(*UTF8)^\S+$/'*/), array(
+	'empty value' => 'Empty value.',
+	'value too short' => 'Value too short.',
+	'value too long' => 'Value too long.',
+	'value not match' => 'Value not match.'));
+
+// NumberValidator
+$form->add_validator('number', new NumberValidator(false, true, 10, 100, true), array(
+	'empty value' => 'Empty value.',
+	'not numeric value' => 'Not a numeric value.',
+	'value too small' => 'Value too small.',
+	'value too big' => 'Value too big.',
+	'not integer numeric value' => 'Not a numeric integer value.'));
+
+// DateValidator
+$form->add_validator('date', new DateValidator(false, true, 'd.m.Y', '1.1.1970', date('d.m.Y')), array(
+	'empty value' => 'Empty value.',
+	'not date value' => 'Not a date value, format DD.MM.RRRR.',
+	'value too small' => 'Value too small.',
+	'value too big' => 'Value too big.'));
+
+// CheckboxValidator
+$form->add_validator('checkbox', new CheckboxValidator(true), array(
+	'invalid value' => 'Invalid value.'));
+
+// SelectValidator
+$form->add_validator('select', new SelectValidator(false, true, array('one', 'two')), array(
+	'empty value' => 'Empty value.',
+	'not allowed value' => 'Not allowed value.'));
+
+// ArrayValidator
+$form->add_validator('array'.$i, new ArrayValidator(
+	array(  'text' => new TextValidator($empty_ok, true, 1, 73, "/^([^0-9*?';]*)$/"),
+		'number' => new NumberValidator($empty_ok, true, 1, 100, true))),
+	array(	'text' => array(
+			'empty value' => 'Empty value.',
+			'value too short' => 'Value too short.',
+			'value too long' => 'Value too long.',
+			'value not match' => 'Value not match.'),
+		'number' => array(
+			'empty value' => 'Empty Value.',
+			'not numeric value' => 'Not a numeric value.',
+			'value too small' => 'Value too small.',
+			'value too big' => 'Value too big.',
+			'not integer numeric value' => 'Not integer numric value.'))
+	);
 
 //print_r($form->values());
 
