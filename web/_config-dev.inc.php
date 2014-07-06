@@ -7,7 +7,7 @@ $SITE['root_url'] = ($_SERVER['HTTPS'] == 'on' ? 'https://' : 'http://') . $_SER
 $SITE['version'] = '1.0.0';
 $SITE['author'] = 'Peter Rybar';
 $SITE['author_mail'] = 'pr.rybar@gmail.com';
-$SITE['author_web'] = 'http://centaur.sk/~prybar';
+$SITE['author_web'] = 'http://prest-tech.appspot.com/';
 
 //$DATABASE = $ROOT_DIR . '/_lib/db/data/db.sqlite'; // SQLite
 //$DATABASE = array(

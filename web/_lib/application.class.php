@@ -16,6 +16,7 @@ class Application
         $this->lang = $lang;
 	$this->pageTemplate = & new Template('templates/page_' . $this->lang . '.php'); // this is the outer template
 	$this->pageTemplate->set('SITE', $SITE);
+	$this->pageTemplate->set('lang', $lang ? $lang : 'en');
     }
 
     /**

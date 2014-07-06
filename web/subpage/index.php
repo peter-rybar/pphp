@@ -11,7 +11,7 @@ $data = array();
 
 
 // view
-$template = 'templates/news';
+$template = 'templates/subpage';
 $app = & new Application($SITE, $_SESSION['lang']);
 $app->headTemplate = & new Template($template . '/head_' . $_SESSION['lang'] . '.php');
 $app->contentTemplate = & new Template($template . '/content_' . $_SESSION['lang'] . '.php');
