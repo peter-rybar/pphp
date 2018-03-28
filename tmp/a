@@ -1,3 +1,0 @@
-rm -rvf ~/public_html/pphp
-mkdir ~/public_html/pphp
-cp -av web/* ~/public_html/pphp
